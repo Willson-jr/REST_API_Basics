@@ -61,7 +61,8 @@ public abstract class AbstractDao<T> {
 
     public List<T> getAll() throws DaoException {
         try {
-            return executeQuery("SELECT * FROM " + getTableName() + getSelectJoiner());
+            String value = "SELECT * FROM " + getTableName() + getSelectJoiner();
+            return executeQuery(value);
         } catch (DataAccessException e) {
             throw new DaoException(NO_ENTITY, e);
         }

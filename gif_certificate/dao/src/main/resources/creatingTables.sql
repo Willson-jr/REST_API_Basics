@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS gift_certificates
     description      TEXT(300),
     price            DECIMAL(8, 2) UNSIGNED NOT NULL,
     duration         SMALLINT UNSIGNED      NOT NULL,
-    create_date      VARCHAR(24)            NOT NULL,
-    last_update_date VARCHAR(24)            NOT NULL,
+    create_date      DATE            NOT NULL,
+    last_update_date DATE            NOT NULL,
     PRIMARY KEY (id)
 );
 

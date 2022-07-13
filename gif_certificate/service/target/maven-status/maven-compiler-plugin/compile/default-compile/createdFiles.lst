@@ -1,0 +1,14 @@
+com\epam\esm\creator\Creator.class
+com\epam\esm\FilterParameters.class
+com\epam\esm\exceptions\ExceptionIncorrectParameterMessageCodes.class
+com\epam\esm\validator\TagValidator.class
+com\epam\esm\GiftCertificateService.class
+com\epam\esm\TagService.class
+com\epam\esm\validator\GiftCertificateValidator.class
+com\epam\esm\validator\IdentifiableValidator.class
+com\epam\esm\CRUDService.class
+com\epam\esm\CRDService.class
+com\epam\esm\service\impl\TagServiceImpl.class
+com\epam\esm\service\impl\GiftCertificateServiceImpl.class
+com\epam\esm\exceptions\IncorrectParameterException.class
+com\epam\esm\AbstractService.class

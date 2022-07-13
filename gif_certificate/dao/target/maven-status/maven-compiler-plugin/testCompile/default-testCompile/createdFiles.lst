@@ -1,0 +1,5 @@
+com\epam\esm\dao\impl\TagDaoImplTest.class
+com\epam\esm\dao\extractor\impl\GiftCertificateFieldExtractorTest.class
+com\epam\esm\dao\config\MySqlDataBaseTestConfig.class
+com\epam\esm\dao\creator\QueryCreatorTest.class
+com\epam\esm\dao\impl\GiftCertificateDaoImplTest.class
