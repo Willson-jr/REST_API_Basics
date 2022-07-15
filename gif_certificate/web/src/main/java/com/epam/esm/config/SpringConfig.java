@@ -9,6 +9,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 @ComponentScan(basePackages = "com.epam.esm")
 @PropertySource("classpath:application.properties")
-public class SpringConfig implements WebMvcConfigurer {
+public class SpringConfig {
 
 }

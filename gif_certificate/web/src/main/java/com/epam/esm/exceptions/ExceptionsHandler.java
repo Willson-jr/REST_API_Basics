@@ -12,7 +12,7 @@ import static com.epam.esm.exceptions.ExceptionCodes.METHOD_NOT_ALLOWED_EXCEPTIO
 import static com.epam.esm.exceptions.ExceptionCodes.NOT_FOUND_EXCEPTION;
 import static org.springframework.http.HttpStatus.*;
 
-@RestControllerAdvice
+
 public class ExceptionsHandler {
     private static final String INVALID_PARAMETER = "Invalid request parameters";
     private static final String NO_HANDLER = "No handler found for this request";
@@ -20,7 +20,7 @@ public class ExceptionsHandler {
 
     @ExceptionHandler(DaoException.class)
     public final ResponseEntity<Object> handleDaoExceptions(DaoException ex) {
-        ErrorResponse errorResponse = new ErrorResponse(NOT_FOUND_EXCEPTION.toString(), ex.getLocalizedMessage());
+        ErrorResponse errorResponse = new ErrorResponse(NOT_FOUND_EXCEPTION.toString()+" "+ex.getCause().getMessage(), ex.getLocalizedMessage());
         return new ResponseEntity<>(errorResponse, NOT_FOUND);
     }
 

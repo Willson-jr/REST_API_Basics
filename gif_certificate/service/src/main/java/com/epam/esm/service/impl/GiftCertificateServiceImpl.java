@@ -11,6 +11,7 @@ import com.epam.esm.exceptions.IncorrectParameterException;
 import com.epam.esm.validator.GiftCertificateValidator;
 import com.epam.esm.validator.IdentifiableValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 
 import java.time.LocalDateTime;
@@ -20,7 +21,7 @@ import java.util.Map;
 import java.util.Objects;
 
 import static com.epam.esm.FilterParameters.*;
-
+@Service
 public class GiftCertificateServiceImpl extends AbstractService<GiftCertificate> implements GiftCertificateService {
     private final GiftCertificateDao giftCertificateDao;
     private final TagDao tagDao;

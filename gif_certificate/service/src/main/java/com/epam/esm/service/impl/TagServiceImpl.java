@@ -9,6 +9,7 @@ import com.epam.esm.exceptions.DaoException;
 import com.epam.esm.exceptions.IncorrectParameterException;
 import com.epam.esm.validator.TagValidator;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 
 import java.util.HashMap;
@@ -16,7 +17,7 @@ import java.util.List;
 import java.util.Map;
 
 import static com.epam.esm.FilterParameters.*;
-
+@Service
 public class TagServiceImpl extends AbstractService<Tag> implements TagService {
     private final TagDao tagDao;
 
