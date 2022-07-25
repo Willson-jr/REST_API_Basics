@@ -38,7 +38,7 @@ public class GiftCertificateValidator {
         if (giftCertificate.getPrice() != null) {
             validatePrice(giftCertificate.getPrice());
         }
-        if (giftCertificate.getDuration() != 0) {
+        if (giftCertificate.getDuration() != null ) {
             validateDuration(giftCertificate.getDuration());
         }
         validateListOfTags(giftCertificate.getTags());
@@ -70,9 +70,10 @@ public class GiftCertificateValidator {
         }
     }
 
-    private static void validateDuration(int duration) throws IncorrectParameterException {
-        if (duration < MIN_DURATION || duration > MAX_DURATION) {
+    private static void validateDuration(Integer duration) throws IncorrectParameterException {
+        if (  duration < MIN_DURATION || duration > MAX_DURATION) {
             throw new IncorrectParameterException(BAD_GIFT_CERTIFICATE_DURATION);
         }
+
     }
 }

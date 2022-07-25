@@ -15,14 +15,8 @@ public class CertificateFieldExtractor implements FieldExtractor<GiftCertificate
     public Map<String, String> extract(GiftCertificate item) {
         String name = item.getName();
         String description = item.getDescription();
-        String priceString = String.valueOf(item.getPrice());
-        if (priceString.equals("null")) {
-            priceString = null;
-        }
-        String durationString = String.valueOf(item.getDuration());
-        if (durationString.equals("0")) {
-            durationString = null;
-        }
+        String priceString = item.getPrice() != null ? String.valueOf(item.getPrice()) : null;
+        String durationString = item.getDuration() != null ? String.valueOf(item.getDuration()) : null;
         LocalDateTime lastUpdateDate = item.getLastUpdateDate();
         String idString = String.valueOf(item.getId());
 

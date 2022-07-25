@@ -10,6 +10,7 @@ import com.epam.esm.exceptions.DaoException;
 import com.epam.esm.exceptions.IncorrectParameterException;
 import com.epam.esm.validator.GiftCertificateValidator;
 import com.epam.esm.validator.IdentifiableValidator;
+import com.mysql.cj.conf.BooleanProperty;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
@@ -19,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 import static com.epam.esm.FilterParameters.*;
 @Service
@@ -70,8 +72,9 @@ public class GiftCertificateServiceImpl extends AbstractService<GiftCertificate>
         IdentifiableValidator.validateId(id);
         GiftCertificateValidator.validateListOfTags(tags);
         List<Tag> createdTags = tagDao.getAll();
-        saveNewTags(tags, createdTags);
-        giftCertificateDao.addTagsAssociation(id, tags);
+        Map<String, Boolean> tagMap = saveNewTags(tags, createdTags);
+        List<Tag> filteredTags = tags.stream().filter(tag -> tagMap.get(tag.getName())).collect(Collectors.toList());
+        giftCertificateDao.addTagsAssociation(id, filteredTags);
     }
 
     @Override
@@ -95,11 +98,12 @@ public class GiftCertificateServiceImpl extends AbstractService<GiftCertificate>
         return giftCertificateDao.getWithFilters(map);
     }
 
-    private void saveNewTags(List<Tag> requestTags, List<Tag> createdTags) throws DaoException {
+    private Map<String, Boolean> saveNewTags(List<Tag> requestTags, List<Tag> createdTags) throws DaoException {
+        Map<String, Boolean> result = new HashMap<>();
         if (requestTags == null) {
-            return;
+            return result;
         }
-
+        boolean check = false;
         for (Tag requestTag : requestTags) {
             boolean isExist = false;
             for (Tag createdTag : createdTags) {
@@ -110,8 +114,11 @@ public class GiftCertificateServiceImpl extends AbstractService<GiftCertificate>
             }
             if (!isExist) {
                 tagDao.insert(requestTag);
+                check = true;
             }
+            result.put(requestTag.getName(), check);
         }
+        return result;
 
 
     }

@@ -102,7 +102,8 @@ public class GiftCertificateDaoImpl extends AbstractDao<GiftCertificate> impleme
     public void addTagsAssociation(long certificateId, List<Tag> tags) throws DaoException {
         List<Long> tagIds = getTagsIds(tags);
         try {
-            tagIds.stream().forEach(tagId -> {
+            tagIds.stream().forEach(tagId ->
+            {
                 executeUpdateQuery(ADD_TAGS_ASSOCIATION_QUERY, certificateId, tagId);
             });
         } catch (DataAccessException e) {
@@ -118,7 +119,7 @@ public class GiftCertificateDaoImpl extends AbstractDao<GiftCertificate> impleme
                 executeUpdateQuery(REMOVE_TAGS_ASSOCIATION_QUERY, certificateId, tagId);
             });
         } catch (DataAccessException e) {
-            throw new DaoException(NO_ENTITY_WITH_ID, e);
+            throw new DaoException(NO_ENTITY_WITH_ID+" "+e.getCause().toString(), e);
         }
     }
 

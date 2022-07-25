@@ -29,8 +29,9 @@ public class TagServiceImpl extends AbstractService<Tag> implements TagService {
 
     @Override
     public void insert(Tag tag) throws DaoException, IncorrectParameterException {
-        dao.insert(tag);
         TagValidator.validateName(tag.getName());
+        checkIfExistByName(tag.getName());
+        dao.insert(tag);
     }
 
     @Override

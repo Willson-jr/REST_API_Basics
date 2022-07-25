@@ -7,6 +7,7 @@ import com.epam.esm.exceptions.DaoException;
 import com.epam.esm.exceptions.IncorrectParameterException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
@@ -14,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/certificates")
+@RequestMapping(value = "/certificates", consumes = MediaType.APPLICATION_JSON_VALUE)
 public class GiftCertificateController {
     private final GiftCertificateService giftCertificateService;
 
@@ -65,7 +66,7 @@ public class GiftCertificateController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Success");
     }
 
-    @PatchMapping("/{id}")
+    @PutMapping("/{id}")
     public ResponseEntity<String> updateGiftCertificate(@PathVariable long id,
                                                         @RequestBody GiftCertificate giftCertificate) throws DaoException, IncorrectParameterException {
         giftCertificateService.update(id, giftCertificate);

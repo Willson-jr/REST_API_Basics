@@ -1,7 +1,10 @@
 package com.epam.esm.validator;
 
 import com.epam.esm.entity.Tag;
+import com.epam.esm.exceptions.DaoException;
 import com.epam.esm.exceptions.IncorrectParameterException;
+
+import java.util.List;
 
 import static com.epam.esm.exceptions.ExceptionIncorrectParameterMessageCodes.BAD_TAG_NAME;
 
@@ -18,4 +21,13 @@ public class TagValidator {
             throw new IncorrectParameterException(BAD_TAG_NAME);
         }
     }
+
+//    public static void validateIfAlreadyExist(String newTag) throws DaoException, IncorrectParameterException {
+//
+//        for (Tag tag : tags) {
+//            if (tag.getName().equals(newTag)){
+//                throw new IncorrectParameterException(BAD_TAG_NAME);
+//            };
+//        }
+//    }
 }

@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS module2test;
+DROP DATABASE IF EXISTS module2;
 
-CREATE DATABASE IF NOT EXISTS module2test;
+CREATE DATABASE IF NOT EXISTS module2;
 
-USE module2test;
+USE module2;
 
 -- -----------------------------------------------------
 -- Table module2test.tags

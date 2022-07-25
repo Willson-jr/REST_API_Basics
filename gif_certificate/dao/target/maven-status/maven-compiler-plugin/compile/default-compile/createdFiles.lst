@@ -4,7 +4,7 @@ com\epam\esm\GiftCertificateDao.class
 com\epam\esm\CRDDao.class
 com\epam\esm\CRUDDao.class
 com\epam\esm\entity\Tag.class
-com\epam\esm\service\impl\TagDaoImpl.class
+com\epam\esm\impl\TagDaoImpl.class
 com\epam\esm\exceptions\DaoException.class
 com\epam\esm\TagDao.class
 com\epam\esm\creator\QueryCreator.class
@@ -13,7 +13,7 @@ com\epam\esm\mapper\GiftCertificateRowMapper.class
 com\epam\esm\config\MySqlDbConfig.class
 com\epam\esm\extractor\impl\CertificateFieldExtractor.class
 com\epam\esm\entity\TagTableColumnNames.class
-com\epam\esm\service\impl\GiftCertificateDaoImpl.class
+com\epam\esm\impl\GiftCertificateDaoImpl.class
 com\epam\esm\entity\GiftCertificate.class
 com\epam\esm\exceptions\ExceptionDaoMessageCodes.class
 com\epam\esm\mapper\TagRowMapper.class

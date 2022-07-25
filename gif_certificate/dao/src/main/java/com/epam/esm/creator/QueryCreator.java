@@ -49,7 +49,6 @@ public class QueryCreator {
         if (fields.get("sortByCreateDate") != null) {
             addSortParameter(query, "create_date", fields.get("sortByCreateDate"));
         }
-
         return query.toString();
     }
 

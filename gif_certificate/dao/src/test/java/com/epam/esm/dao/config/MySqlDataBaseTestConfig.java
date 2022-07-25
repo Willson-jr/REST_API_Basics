@@ -1,6 +1,5 @@
 package com.epam.esm.dao.config;
 
-import com.epam.esm.service.impl.GiftCertificateDaoImpl;
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;

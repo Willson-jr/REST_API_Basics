@@ -2,7 +2,7 @@ package com.epam.esm.dao.impl;
 
 import com.epam.esm.entity.Tag;
 import com.epam.esm.exceptions.DaoException;
-import com.epam.esm.service.impl.TagDaoImpl;
+import com.epam.esm.impl.TagDaoImpl;
 import com.epam.esm.dao.config.MySqlDataBaseTestConfig;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

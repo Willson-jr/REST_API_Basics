@@ -22,7 +22,7 @@ public class TagController {
         this.tagService = tagService;
     }
 
-    @GetMapping
+    @GetMapping()
     public List<Tag> allTags() throws DaoException {
         return tagService.getAll();
     }
@@ -38,8 +38,9 @@ public class TagController {
         return ResponseEntity.status(HttpStatus.NO_CONTENT).body("Success");
     }
 
-    @PostMapping
-    public ResponseEntity createTag(@RequestBody Tag tag) throws DaoException, IncorrectParameterException {
+    @PostMapping("/create")
+    @ResponseBody
+    public ResponseEntity createTag(@RequestParam Tag tag) throws DaoException, IncorrectParameterException {
         tagService.insert(tag);
         return ResponseEntity.status(HttpStatus.CREATED).body("Success");
     }

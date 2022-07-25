@@ -5,6 +5,7 @@ import com.epam.esm.entity.*;
 import com.epam.esm.exceptions.DaoException;
 import com.epam.esm.exceptions.IncorrectParameterException;
 
+import com.epam.esm.impl.GiftCertificateDaoImpl;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

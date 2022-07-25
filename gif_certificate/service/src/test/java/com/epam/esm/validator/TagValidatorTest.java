@@ -9,10 +9,10 @@ import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TagValidatorTest {
-    private static final String INCORRECT_NAME = "qw";
-    private static final String CORRECT_NAME = "tagName";
-    private static final Tag INCORRECT_TAG = new Tag(1L, INCORRECT_NAME);
-    private static final Tag CORRECT_TAG = new Tag(2L, CORRECT_NAME);
+    private static final String INCORRECT_NAME = "yo";
+    private static final String CORRECT_NAME = "tagName4";
+    private static final Tag INCORRECT_TAG = new Tag(1, INCORRECT_NAME);
+    private static final Tag CORRECT_TAG = new Tag(5, CORRECT_NAME);
 
     @Test
     void testValidate_incorrectData() {
